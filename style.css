@@ -243,33 +243,71 @@ select {
     .container {
         width: 95%;
         padding: 15px;
+        margin: 10px auto;
     }
 
     .summary {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 15px;
-    }
-
-    .action-buttons {
-        flex-direction: column;
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 12px;
+        margin-bottom: 12px;
     }
 
     .card {
-        min-height: 120px;
+        width: auto !important;
+        min-height: 110px !important;
+        padding: 15px;
+    }
+
+    .card h3 {
+        font-size: 16px;
+        margin-bottom: 10px;
     }
 
     .card p {
-        font-size: 1.8rem;
+        font-size: 1.6rem !important;
     }
 
-    .expense-actions {
+    #topCategory {
+        font-size: 1rem !important;
+        line-height: 1.4;
+    }
+
+    .action-buttons {
+        display: flex;
         flex-direction: column;
         gap: 10px;
     }
 
-    .chart-container {
-        max-width: 100%;
+    .secondary-btn {
+        width: 100%;
     }
 
+    .chart-container {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    .expense-item {
+        padding: 15px;
+    }
+
+    .expense-info h3,
+    .expense-info strong {
+        font-size: 18px;
+    }
+
+    .amount {
+        font-size: 24px !important;
+    }
+
+    button {
+        padding: 14px;
+        font-size: 16px;
+    }
+
+    input,
+    select {
+        font-size: 16px;
+    }
 }

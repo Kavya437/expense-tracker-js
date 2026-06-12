@@ -235,3 +235,32 @@ select {
     background:#ef4444;
     color:white;
 }
+@media (max-width: 768px){
+
+    .container{
+        width:95%;
+        padding:15px;
+    }
+
+    .summary{
+        flex-direction:column;
+    }
+
+    .action-buttons{
+        flex-direction:column;
+    }
+
+    .card{
+        width:100%;
+    }
+
+    .expense-actions{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .chart-container{
+        max-width:100%;
+    }
+
+}

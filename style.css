@@ -72,7 +72,7 @@ button:hover {
     font-size: 18px;
 }
 
-.card p{
+.card p {
     font-size: 2rem;
     font-weight: 600;
     margin-top: 10px;
@@ -214,53 +214,62 @@ select {
     color: white;
 }
 
-#topCategory{
+#topCategory {
     font-size: 1.4rem !important;
     line-height: 1.6;
     font-weight: 600;
 }
-.remaining-positive{
-    color:#16a34a;
+
+.remaining-positive {
+    color: #16a34a;
 }
 
-.remaining-negative{
-    color:#ef4444;
-}
-.danger-btn{
-    color:#ef4444;
-    border:2px solid #ef4444;
+.remaining-negative {
+    color: #ef4444;
 }
 
-.danger-btn:hover{
-    background:#ef4444;
-    color:white;
+.danger-btn {
+    color: #ef4444;
+    border: 2px solid #ef4444;
 }
-@media (max-width: 768px){
 
-    .container{
-        width:95%;
-        padding:15px;
+.danger-btn:hover {
+    background: #ef4444;
+    color: white;
+}
+
+@media (max-width: 768px) {
+
+    .container {
+        width: 95%;
+        padding: 15px;
     }
 
-    .summary{
-        flex-direction:column;
+    .summary {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
     }
 
-    .action-buttons{
-        flex-direction:column;
+    .action-buttons {
+        flex-direction: column;
     }
 
-    .card{
-        width:100%;
+    .card {
+        min-height: 120px;
     }
 
-    .expense-actions{
-        flex-direction:column;
-        gap:10px;
+    .card p {
+        font-size: 1.8rem;
     }
 
-    .chart-container{
-        max-width:100%;
+    .expense-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .chart-container {
+        max-width: 100%;
     }
 
 }

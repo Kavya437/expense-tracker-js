@@ -40,18 +40,18 @@
         <div class="summary">
 
             <div class="card">
-                ...
-                Total Expenses
+                <h3>Total Expenses</h3>
+                <p>₹<span id="total">0</span></p>
             </div>
 
             <div class="card">
-                ...
-                Total Entries
+                <h3>Total Entries</h3>
+                <p><span id="entries">0</span></p>
             </div>
 
             <div class="card">
-                ...
-                Budget
+                <h3>Budget</h3>
+                <p>₹<span id="budget">0</span></p>
             </div>
 
         </div>
@@ -59,25 +59,26 @@
         <div class="summary">
 
             <div class="card">
-                ...
-                Remaining
+                <h3 id="remainingTitle">Remaining</h3>
+                <p>₹<span id="remaining">0</span></p>
             </div>
 
             <div class="card">
-                ...
-                Top Category
+                <h3>Top Category</h3>
+                <p id="topCategory">None</p>
             </div>
 
         </div>
         <div class="progress-container">
             <div id="progressBar" class="progress-bar"></div>
         </div>
-        <div class="chart-container">
+        <div id="chartSection" class="chart-container">
             <canvas id="expenseChart"></canvas>
         </div>
 
         <p id="progressText">0% Used</p>
         <p id="warningMessage"></p>
+
         <div class="action-buttons">
 
             <button class="secondary-btn" id="toggleMoneyBtn" onclick="toggleMoneyVisibility()">
@@ -92,6 +93,12 @@
 
             </button>
 
+            <button class="secondary-btn danger-btn" onclick="clearAllExpenses()">
+
+                🗑 Clear All
+
+            </button>
+
         </div>
 
         <ul id="expenseList"></ul>
@@ -101,8 +108,11 @@
         <ul id="expenseList"></ul>
     </div>
 
-    <script src="script.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="script.js"></script>
+
 </body>
 
 </html>

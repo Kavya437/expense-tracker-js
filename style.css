@@ -72,11 +72,10 @@ button:hover {
     font-size: 18px;
 }
 
-.card p {
-    font-size: 40px;
-    font-weight: bold;
-    color: #16a34a;
-    margin-top: 15px;
+.card p{
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: 10px;
 }
 
 ul {
@@ -215,8 +214,10 @@ select {
     color: white;
 }
 
-#topCategory {
-    font-size: 24px !important;
+#topCategory{
+    font-size: 1.4rem !important;
+    line-height: 1.6;
+    font-weight: 600;
 }
 .remaining-positive{
     color:#16a34a;
@@ -224,4 +225,13 @@ select {
 
 .remaining-negative{
     color:#ef4444;
+}
+.danger-btn{
+    color:#ef4444;
+    border:2px solid #ef4444;
+}
+
+.danger-btn:hover{
+    background:#ef4444;
+    color:white;
 }

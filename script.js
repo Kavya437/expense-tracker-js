@@ -128,8 +128,45 @@ function displayExpenses() {
         hideMoney ? "****" : budget;
     const remaining = budget - total;
 
-    document.getElementById("remaining").innerText =
-        hideMoney ? "****" : remaining;
+    const remainingElement =
+        document.getElementById("remaining");
+
+    if (remaining >= 0) {
+
+        remainingElement.innerText =
+            hideMoney ? "****" : remaining;
+
+    }
+    else {
+
+        remainingElement.innerText =
+            hideMoney ? "****" : Math.abs(remaining);
+
+    }
+
+    const remainingTitle =
+        document.getElementById("remainingTitle");
+
+    if (remaining >= 0) {
+
+        remainingElement.classList.remove(
+            "remaining-negative"
+        );
+
+        remainingTitle.innerText =
+            "Remaining";
+
+    }
+    else {
+        remainingElement.classList.add(
+            "remaining-negative"
+        );
+
+        remainingTitle.innerText =
+            "🚨 Budget Exceeded";
+
+    }
+
     let topCategory = "None";
     let maxAmount = 0;
 
@@ -146,6 +183,19 @@ function displayExpenses() {
     document.getElementById("topCategory").innerText =
         topCategory;
 
+    const chartSection =
+        document.getElementById("chartSection");
+
+    if (expenses.length === 0) {
+
+        chartSection.style.display = "none";
+
+    }
+    else {
+
+        chartSection.style.display = "block";
+
+    }
     const labels =
         Object.keys(categoryTotals);
 
@@ -154,6 +204,10 @@ function displayExpenses() {
 
     if (expenseChart) {
         expenseChart.destroy();
+    }
+
+    if (expenses.length === 0) {
+        return;
     }
 
     const ctx =
@@ -227,11 +281,44 @@ function deleteExpense(index) {
 function exportCSV() {
     let csv =
         "Category,Name,Amount,Date\n";
-        
+
     expenses.forEach(expense => {
 
         csv +=
             `${expense.category},${expense.name},${expense.amount},${expense.date}\n`;
 
     });
+
+    const blob =
+        new Blob([csv], { type: "text/csv" });
+
+    const url =
+        window.URL.createObjectURL(blob);
+
+    const a =
+        document.createElement("a");
+
+    a.href = url;
+    a.download = "expenses.csv";
+    a.click();
+}
+function clearAllExpenses() {
+
+    const confirmDelete =
+        confirm(
+            "Are you sure you want to delete all expenses?"
+        );
+
+    if (!confirmDelete) {
+        return;
+    }
+
+    expenses = [];
+
+    localStorage.setItem(
+        "expenses",
+        JSON.stringify(expenses)
+    );
+
+    displayExpenses();
 }
